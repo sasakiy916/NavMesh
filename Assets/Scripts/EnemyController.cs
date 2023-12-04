@@ -10,11 +10,11 @@ public class EnemyController : MonoBehaviour
     void Start()
     {
         nav = GetComponent<NavMeshAgent>();
-        // 目的地設定
-        nav.destination = target.transform.position;
     }
 
     void Update()
     {
+        // 目的地設定
+        nav.destination = target.transform.position;
     }
 }
