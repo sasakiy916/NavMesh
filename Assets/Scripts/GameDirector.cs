@@ -8,6 +8,7 @@ public class GameDirector : MonoBehaviour
     float clearCount = 10;
     public Text clearCountText;
     public static GameDirector instance;
+
     void Start()
     {
         if (instance != null)
