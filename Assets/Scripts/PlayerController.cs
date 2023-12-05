@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Callbacks;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UI;
@@ -21,7 +22,8 @@ public class PlayerController : MonoBehaviour
     {
         moveHorizontal = Input.GetAxis("Horizontal");
         moveVertical = Input.GetAxis("Vertical");
-        transform.rotation = Quaternion.LookRotation(rd.velocity.normalized);
+        if (!(rd.velocity.magnitude < 0.1))
+            transform.rotation = Quaternion.LookRotation(rd.velocity.normalized);
         anim.SetFloat("run", rd.velocity.magnitude);
     }
 
