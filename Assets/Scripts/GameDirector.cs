@@ -5,8 +5,10 @@ using UnityEngine.UI;
 
 public class GameDirector : MonoBehaviour
 {
-    float clearCount = 10;
+    [HideInInspector]
+    public float clearCount;
     public Text clearCountText;
+    public ItemGenerator itemGenerator;
     public static GameDirector instance;
 
     void Start()
@@ -23,7 +25,7 @@ public class GameDirector : MonoBehaviour
 
     void Update()
     {
-        clearCountText.text = $"クリアまで:{clearCount}";
+        clearCountText.text = $"クリアまで:{clearCount:000}/{itemGenerator.itemCount}";
     }
 
     public void DecreaseClearCount()
